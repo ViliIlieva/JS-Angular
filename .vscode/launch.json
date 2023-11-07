@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}\\index.js",
+            "preLaunchTask": "compile",
+            "sourceMaps": true,
+            "outFiles": ["${workspaceFolder}/**/*.js"]
+        }
+    ]
+}
