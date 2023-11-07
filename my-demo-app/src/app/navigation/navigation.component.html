@@ -1,0 +1,29 @@
+<div id="nav">
+  <input [value]="inputValue" type="text" />
+
+  <!-- по този начин сменяме целия спан когато се изпълни иф условието -->
+  <span *ngIf="toggle">
+    <ul>
+      <!-- <li>ActiveList1</li>
+            <li>ActiveList2</li>
+            <li>ActiveList3</li> -->
+
+      <li *ngFor="let user of activeUsers">
+        <span [class.green] = "user.age % 2 === 0" [class.red] = "user.age % 2 != 0">
+          {{ user.name + ": " + user.age }}
+        </span>
+      </li>
+    </ul>
+  </span>
+
+  <span *ngIf="!toggle">
+    <div>Nothing is Active! :(</div>
+  </span>
+
+  <!-- по този начин се променя само текста във спана ако условието е изпълнено -->
+  <!-- <span>{{toggle ? "Show" : "Hide"}}</span> -->
+
+  <button (click)="handleClick()">
+    Make {{ toggle ? "Inactive" : "Active" }}}
+  </button>
+</div>
