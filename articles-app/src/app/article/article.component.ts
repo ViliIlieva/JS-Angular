@@ -9,8 +9,8 @@ import { Article } from '../models/article.models';
 export class ArticleComponent {
 
   private symbols: number = 250;
-  @Input() article: Article;
-  @Input() articleDesc: string;
+  @Input() article!: Article;
+  @Input() articleDesc!: string;
 
   descToShow: string;
   articleDescLen: number;
@@ -19,9 +19,7 @@ export class ArticleComponent {
   imageIsShown: boolean = false;
   imageButtonTitle: string = 'Show Image';
 
-  constructor(article: Article, @Inject(String)articleDesc: string) {
-    this.article = article;
-    this.articleDesc = articleDesc;
+  constructor() {
     this.articleDescLen = 0;
     this.descToShow = '';
   }

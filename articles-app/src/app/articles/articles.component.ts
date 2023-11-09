@@ -9,11 +9,13 @@ import { ArticleData } from '../data/data';
 )
 export class ArticlesComponent implements OnInit {
 
-  articles : Article[] | undefined;
+  articles : Article[] = [];
 
   constructor(){ };
 
   ngOnInit(): void {
     this.articles = new ArticleData().getData();
   }
+  
+
 }
